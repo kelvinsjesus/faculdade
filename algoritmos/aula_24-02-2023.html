@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOOOOOOOOh maga</title>
+</head>
+<body>
+    <input type="text" id="input_text">
+    <button onclick="faladele()">Fala dele</button>
+    <button onclick="alterarConteudo()">mudar conteudo da div</button>
+    <button onclick="incrementarConteudo()">incrementar conteudo</button>
+    <button onclick="verificarMensagem()">verificar mensagem</button>
+    <div id="div_fala">fala de mim</div>
+</body>
+<script>
+    function faladele() {
+        alert(div_fala.innerHTML)
+    }
+
+    function alterarConteudo() {
+        div_fala.innerHTML = input_text.value;
+    }
+    function incrementarConteudo() {
+        div_fala.innerHTML = div_fala.innerHTML + " " + input_text.value;
+    }
+    function verificarMensagem() { 
+        var mensagem = input_text.value;
+        div_fala.innerHTML = `A mensagem digitada é: ${mensagem}`;
+    }
+</script>
+</html>

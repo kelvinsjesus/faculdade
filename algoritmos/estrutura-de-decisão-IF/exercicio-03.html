@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=3.0">
+    <title>Exercicio 3</title>
+</head>
+<body>
+    <label for="inputNota1">Informe a 1° nota</label>
+    <input type="text" id="inputNota1">
+    <label for="inputNota2">Informe a 2° nota</label>
+    <input type="text" id="inputNota2">
+    <label for="inputNota3">Informe a 3° nota</label>
+    <input type="text" id="inputNota3">
+    <br>
+    <button onclick="analisarDesempenho()">Análisar desempenho</button>
+    <br>
+    <div id="divConteudo"></div>
+</body>
+</html>
+<script>
+    function analisarDesempenho() {
+        var nota1 = Number(inputNota1.value);
+        var nota2 = Number(inputNota2.value);
+        var nota3 = Number(inputNota3.value);
+        var media = (nota1 + nota2 + nota3) / 3;
+
+        // divConteudo.innerHTML = ''
+
+        divConteudo.innerHTML = `Sua média foi de ${media}`;
+        if (media > 9.4) {
+            divConteudo.innerHTML += "<br>Parabéns, você é fora de série!"
+        }
+    }
+</script>

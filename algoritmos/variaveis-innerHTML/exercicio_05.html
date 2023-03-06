@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 05</title>
+</head>
+<body>
+    <label for="">Valor da passagem do ônibus:</label>
+    <input type="text" id="inputValorPassagemOnibus">
+    <br>
+    <label for="">Quantidade de viagens por mês:</label>
+    <input type="text" id="inputQtdViagens">
+    <br>
+    <label for="">Distância de sua casa até seu trabalho (em km)</label>
+    <input type="text" id="inputDistancia">
+    <br>
+    <button onclick="calcularVt()">Calcular VT</button>
+    <div id="div_conteudo"></div>
+</body>
+<script>
+    function calcularVt() {
+        var valorPassagemOnibus = Number(inputValorPassagemOnibus.value)
+        var qtdViagens = Number(inputQtdViagens.value)
+        var distancia = Number(inputDistancia.value)
+
+        // transporte de aplicativo
+        var qtdViagensUber = (qtdViagens * 10) / 100; 
+        qtdViagens = qtdViagens - qtdViagensUber;
+        
+        var valorDistanciaUber = (qtdViagensUber * distancia) * 0.75;
+
+        var valorTotalTransporte = (valorPassagemOnibus * qtdViagens) + valorDistanciaUber;
+
+      
+
+        div_conteudo.innerHTML = `
+          Você vai gastar R$${valorTotalTransporte} por mês com transporte.
+        `
+    }
+</script>
+</html>

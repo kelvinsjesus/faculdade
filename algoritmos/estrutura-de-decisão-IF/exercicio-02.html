@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2</title>
+</head>
+<body>
+    <label for="inputQtdLatinhas">Informe quantas latinhas você bebe por dia:</label>
+    <input type="text" id="inputQtdLatinhas">
+    <br>
+    <button onclick="calcularLatinhas()">Quantos refris?</button>
+    <br>
+    <div id="divConteudo"></div>
+</body>
+<script>
+    function calcularLatinhas() {
+        var QtdLatinhasDia = Number(inputQtdLatinhas.value);
+        var QtdLatinhasAno = QtdLatinhasDia * 365;
+
+        divConteudo.innerHTML = `No período de 1 ano você consumiu ${QtdLatinhasAno} latinhas de refrigerante!`;
+
+        if (QtdLatinhasAno >= 500) {
+            divConteudo.innerHTML += `<br>Cuidado com a diabetes!`;
+        }
+    }
+
+</script>
+</html>

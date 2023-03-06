@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 05</title>
+</head>
+<body>
+    Informe o consumo de kWh no mês:
+    <input type="text" id="inputKwh">
+    <button onclick="calcularContaLuz()">calcular conta de luz</button>
+    <br>
+    <div id="divMensagem"></div>
+</body>
+</html>
+<script>
+    function calcularContaLuz() {
+        var kwh = Number(inputKwh.value);
+        var valorContaLuz = kwh * 0.85;
+
+        divMensagem.innerHTML = ``
+
+        if (kwh < 100) {
+            kwh = kwh * 0.9;
+        }
+
+        if (kwh >= 100) {
+            divMensagem.innerHTML = `Sua conta de luz será de R$${valorContaLuz}`
+        }
+    }
+</script>
